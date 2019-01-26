@@ -1,5 +1,5 @@
-var SchwabToken = artifacts.require("../ERC721/SchwabToken");
+var UserAuthenticate = artifacts.require("UserAuthenticate");
 
 module.exports = function(deployer) {
-    deployer.deploy(SchwabToken);
+    deployer.deploy(UserAuthenticate);
 };
