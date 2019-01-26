@@ -25,7 +25,4 @@ contract ERC721Mintable is ERC721, MinterRole {
 contract SchwabToken is ERC721Mintable{
   string public constant name = "SchwabToken";
   string public constant symbol = "SCHW";
-
-
-
 }
