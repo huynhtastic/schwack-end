@@ -456,6 +456,7 @@ var contract_abi = [
 
 const web3 = new Web3( new Web3.providers.HttpProvider('http://localhost:7545') );
 var address = "0x08478FDeE12cb70eB9De7bF5098E72a1b92219c8";
+var toAddress = "0xf71ed6afdca3cc587fbb0ac2599f9a627ec328ec";
 var key = "fb692d54fd57bc3487b7ca844863d7f6d0712f892088c60421f5b10de43b0396";
 var contract_address = "0x679387b01546bd3c027d17164906247344e38531"
 const privateKey1 = Buffer.from(key, 'hex')
@@ -472,9 +473,20 @@ if(!web3.isConnected()) {
   var MyContract = web3.eth.contract(contract_abi);
   // initiate contract for an address
   var myContractInstance = MyContract.at(contract_address);
-  var some;
-  //myContractInstance.methods.totalSupply("0x08478FDeE12cb70eB9De7bF5098E72a1b92219c8").call().then(console.log);
+
+/*
   myContractInstance.totalSupply.call(function(error,result){
+    if(error){
+        console.log("Error");
+        throw error;
+    }else if (result){
+        a = result;
+    }
+  });
+
+
+
+  myContractInstance.name.call(function(error,result){
     if(error){
         console.log("Error");
         throw error;
@@ -482,23 +494,26 @@ if(!web3.isConnected()) {
         console.log(result);
     }
   });
+  */
 
-  //console.log(some);
-
-  /*myContractInstance.approve.send(function(error, result){
-    if(error){
-      console.log("Error");
-      throw error;
-    }else{
-      console.log(result);
-    }
-  });*/
+  var name = myContractInstance.name({from:web3.eth.accounts[0]})
+  console.log("name: " + name)
 
 
+  var totSupply = myContractInstance.totalSupply({from:web3.eth.accounts[0]})
+  console.log("totSupply: " + web3.fromWei(totSupply, 'ether').toNumber())
+
+
+
+  var txId = myContractInstance.transfer(toAddress,1, {from: web3.eth.accounts[0]})
+  console.log("Transfer txID: " + txId)
+
+
+/*
   web3.eth.getBalance(address, (err, wei) => {
     balance = web3.fromWei(wei, 'ether')
-    console.log(balance)
+    console.log(balance.toNumber())
   })
-
+*/
 
 }
