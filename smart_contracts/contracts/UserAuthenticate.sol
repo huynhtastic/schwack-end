@@ -18,7 +18,7 @@ contract TableFactory is Ownable {
     mapping (uint => address) public tableToOwner;
     mapping (address => uint) ownerTableCount;
 
-    function _createTable(uint _tableId, string memory _name, string memory _database) internal {
+    function createTable(uint _tableId, string memory _name, string memory _database) onlyOwner public {
         uint creationId = tables.push(Table(uint32(now), _tableId, _name, _database)) - 1;
         tableToOwner[creationId] = msg.sender;
         ownerTableCount[msg.sender]++;
@@ -105,7 +105,7 @@ contract Freezing is Ownable { //validate restricting users to access ERC721 aut
 
 
 
-contract UserAuthenticate is TableFactory, SchwabToken {
+contract UserAuthenticate is TableFactory, SchwabToken, Freezing {
 
   using SafeMath for uint256;
 
@@ -114,6 +114,10 @@ contract UserAuthenticate is TableFactory, SchwabToken {
   modifier onlyOwnerOf(uint _creationId) { //maps to that particular token creation
     require(msg.sender == tableToOwner[_creationId]);
     _;
+  }
+
+  function createTableToken(uint _tableId, string memory _name, string memory _database) onlyOwner public {
+    TableFactory.createTable(_tableId, _name, _database);
   }
 
 
