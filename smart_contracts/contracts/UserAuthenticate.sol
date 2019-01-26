@@ -1,13 +1,13 @@
 pragma solidity >=0.4.22 <0.6.0;
 import "./Ownable.sol";
-import "./ERC721/SchwabToken.sol";
+import "../../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
 contract TableFactory is Ownable {
 
     event NewTable(uint creationId, string name, string database);
 
     struct Table {
-      uint creationId;
+      uint uniqueId;
       uint tableId;
       string name;
       string database;
@@ -19,7 +19,7 @@ contract TableFactory is Ownable {
     mapping (address => uint) ownerTableCount;
 
     function createTable(uint _tableId, string memory _name, string memory _database) onlyOwner public {
-        uint creationId = tables.push(Table(uint32(now), _tableId, _name, _database)) - 1;
+        uint creationId = tables.push(Table(uint32(now+1), _tableId, _name, _database)) - 1;
         tableToOwner[creationId] = msg.sender;
         ownerTableCount[msg.sender]++;
         emit NewTable(creationId, _name, _database);
@@ -105,7 +105,7 @@ contract Freezing is Ownable { //validate restricting users to access ERC721 aut
 
 
 
-contract UserAuthenticate is TableFactory, SchwabToken, Freezing {
+contract UserAuthenticate is TableFactory, ERC721, Freezing {
 
   using SafeMath for uint256;
 
