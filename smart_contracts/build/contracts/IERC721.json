@@ -278,9 +278,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity >=0.4.22 <0.6.0;\n\nimport \"../introspection/IERC165.sol\";\n\n/**\n * @title ERC721 Non-Fungible Token Standard basic interface\n * @dev see https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md\n */\ncontract IERC721 is IERC165 {\n    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);\n    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);\n    event ApprovalForAll(address indexed owner, address indexed operator, bool approved);\n\n    function balanceOf(address owner) public view returns (uint256 balance);\n    function ownerOf(uint256 tokenId) public view returns (address owner);\n\n    function approve(address to, uint256 tokenId) public;\n    function getApproved(uint256 tokenId) public view returns (address operator);\n\n    function setApprovalForAll(address operator, bool _approved) public;\n    function isApprovedForAll(address owner, address operator) public view returns (bool);\n\n    function transferFrom(address from, address to, uint256 tokenId) public;\n    function safeTransferFrom(address from, address to, uint256 tokenId) public;\n\n    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) public;\n}\n",
-  "sourcePath": "/Users/dohyunshin/Projects/UTProjects/schwack-end/smart_contracts/contracts/ERC721/IERC721.sol",
+  "sourcePath": "/home/huynhtastic/dev/school/spring_2018/schwinnin/schwack-end/smart_contracts/contracts/ERC721/IERC721.sol",
   "ast": {
-    "absolutePath": "/Users/dohyunshin/Projects/UTProjects/schwack-end/smart_contracts/contracts/ERC721/IERC721.sol",
+    "absolutePath": "/home/huynhtastic/dev/school/spring_2018/schwinnin/schwack-end/smart_contracts/contracts/ERC721/IERC721.sol",
     "exportedSymbols": {
       "IERC721": [
         647
@@ -304,12 +304,12 @@
         "src": "0:32:1"
       },
       {
-        "absolutePath": "/Users/dohyunshin/Projects/UTProjects/schwack-end/smart_contracts/contracts/introspection/IERC165.sol",
+        "absolutePath": "/home/huynhtastic/dev/school/spring_2018/schwinnin/schwack-end/smart_contracts/contracts/introspection/IERC165.sol",
         "file": "../introspection/IERC165.sol",
         "id": 547,
         "nodeType": "ImportDirective",
         "scope": 648,
-        "sourceUnit": 1174,
+        "sourceUnit": 1594,
         "src": "34:38:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -323,10 +323,10 @@
               "id": 548,
               "name": "IERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1173,
+              "referencedDeclaration": 1593,
               "src": "236:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC165_$1173",
+                "typeIdentifier": "t_contract$_IERC165_$1593",
                 "typeString": "contract IERC165"
               }
             },
@@ -336,7 +336,7 @@
           }
         ],
         "contractDependencies": [
-          1173
+          1593
         ],
         "contractKind": "contract",
         "documentation": "@title ERC721 Non-Fungible Token Standard basic interface\n@dev see https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md",
@@ -344,7 +344,7 @@
         "id": 647,
         "linearizedBaseContracts": [
           647,
-          1173
+          1593
         ],
         "name": "IERC721",
         "nodeType": "ContractDefinition",
@@ -1518,7 +1518,7 @@
     "src": "0:1238:1"
   },
   "legacyAST": {
-    "absolutePath": "/Users/dohyunshin/Projects/UTProjects/schwack-end/smart_contracts/contracts/ERC721/IERC721.sol",
+    "absolutePath": "/home/huynhtastic/dev/school/spring_2018/schwinnin/schwack-end/smart_contracts/contracts/ERC721/IERC721.sol",
     "exportedSymbols": {
       "IERC721": [
         647
@@ -1542,12 +1542,12 @@
         "src": "0:32:1"
       },
       {
-        "absolutePath": "/Users/dohyunshin/Projects/UTProjects/schwack-end/smart_contracts/contracts/introspection/IERC165.sol",
+        "absolutePath": "/home/huynhtastic/dev/school/spring_2018/schwinnin/schwack-end/smart_contracts/contracts/introspection/IERC165.sol",
         "file": "../introspection/IERC165.sol",
         "id": 547,
         "nodeType": "ImportDirective",
         "scope": 648,
-        "sourceUnit": 1174,
+        "sourceUnit": 1594,
         "src": "34:38:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1561,10 +1561,10 @@
               "id": 548,
               "name": "IERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1173,
+              "referencedDeclaration": 1593,
               "src": "236:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC165_$1173",
+                "typeIdentifier": "t_contract$_IERC165_$1593",
                 "typeString": "contract IERC165"
               }
             },
@@ -1574,7 +1574,7 @@
           }
         ],
         "contractDependencies": [
-          1173
+          1593
         ],
         "contractKind": "contract",
         "documentation": "@title ERC721 Non-Fungible Token Standard basic interface\n@dev see https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md",
@@ -1582,7 +1582,7 @@
         "id": 647,
         "linearizedBaseContracts": [
           647,
-          1173
+          1593
         ],
         "name": "IERC721",
         "nodeType": "ContractDefinition",
@@ -2761,7 +2761,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-01-26T04:15:13.150Z",
+  "updatedAt": "2019-01-26T07:46:17.472Z",
   "devdoc": {
     "details": "see https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md",
     "methods": {

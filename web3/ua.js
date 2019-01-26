@@ -1,4 +1,4 @@
-{
+var abi = [{
   "contractName": "UserAuthenticate",
   "abi": [
     {
@@ -11162,34 +11162,10 @@
       "links": {},
       "address": "0xfb43f09f211C5614A423e70D60c1e13Af0b2a582",
       "transactionHash": "0x87dda77fa932be8606db66f3213bd13b69370f9377084804e4c3714d7b93d1c9"
-    },
-    "1548497590438": {
-      "events": {},
-      "links": {},
-      "address": "0x25746027a4a41A3a13727c31E360f2c827A2db16",
-      "transactionHash": "0x93a850036f30bd553e60cdf2d666fcbe306067ce1418aa9b845aaecdda5e7df5"
-    },
-    "1548499230231": {
-      "events": {},
-      "links": {},
-      "address": "0x2b98cfc4444479a418C8439DCe643369927932Dc",
-      "transactionHash": "0xe2042098007083ae18f66f41f17729e804aff52653fab7b1f9d96fd6bfe9b3b4"
-    },
-    "1548499801352": {
-      "events": {},
-      "links": {},
-      "address": "0x2F19DC76AC62601587F7590BFC4Fc50E59d3777F",
-      "transactionHash": "0xddd934c13ba0ac5fa5808fc13d68cf18e433573f99786871c5df024ba8f25cfb"
-    },
-    "1548501361083": {
-      "events": {},
-      "links": {},
-      "address": "0x3bd44b4FCf492F15123aCEaC9C0Eb2b8162Fe25B",
-      "transactionHash": "0x84658db5b8977aa80d29fb5e1aa5247d7dfef97f6323993f1fa2e28073bfe060"
     }
   },
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-01-26T11:18:39.276Z",
+  "updatedAt": "2019-01-26T07:46:18.576Z",
   "devdoc": {
     "methods": {
       "approve(address,uint256)": {
@@ -11274,3 +11250,6 @@
     }
   }
 }
+]
+
+module.exports = abi
