@@ -454,11 +454,11 @@ var contract_abi = [
 	}
 ]
 
-const web3 = new Web3( new Web3.providers.HttpProvider('http://localhost:7545') );
-var address = "0x08478FDeE12cb70eB9De7bF5098E72a1b92219c8";
-var toAddress = "0xf71ed6afdca3cc587fbb0ac2599f9a627ec328ec";
-//var key = "fb692d54fd57bc3487b7ca844863d7f6d0712f892088c60421f5b10de43b0396";
-var contract_address = "0x679387b01546bd3c027d17164906247344e38531"
+const web3 = new Web3( new Web3.providers.HttpProvider('http://localhost:8545') ); //running ganache-cli on the terminal ==8545
+var address = "";
+var toAddress = "";
+//var key = "";
+var contract_address = ""
 //const privateKey1 = Buffer.from(key, 'hex')
 var gasLimit = "3000000"
 
